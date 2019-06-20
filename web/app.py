@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from flask import Flask
 
 app = Flask(__name__)
@@ -5,9 +7,9 @@ app = Flask(__name__)
 @app.route("/")
 def index():
 
-	html = "<h3>M'Lady!</h3>"
+	html = "<h3>M'y Lady!</h3>"
 
 	return html
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0', port=8000, debug=True)
