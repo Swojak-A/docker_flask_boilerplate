@@ -6,9 +6,6 @@ services:
     build: ./web
     expose:
       - "8000"
-    volumes:
-      - app-data:/user/src/app
-      - web-data:/usr/src/app/static
     env_file: 
       - .env
     command: /usr/local/bin/gunicorn -w 2 -b :8000 app:app
@@ -23,8 +20,3 @@ services:
       - web-data:/usr/src/app/static
     links:
       - web:web
-
-
-volumes:
-  app-data:
-  web-data:
